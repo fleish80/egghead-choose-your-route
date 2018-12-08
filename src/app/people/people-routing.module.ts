@@ -23,7 +23,10 @@ const routes = [
     component: PersonDetailLesson10Component,
     resolve: {
       person: PersonResolverService
-    }
+    },
+    data: {
+      loadAddresses: true
+    },
 
   },
   
