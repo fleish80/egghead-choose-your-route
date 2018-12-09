@@ -1,6 +1,6 @@
 Lesson 10
 <pre>{{ person | json }}</pre>
-<a [routerLink]="['/people']">Back</a>
+<a [routerLink]="['/people']" [queryParams]="activatedRoute.queryParams | async">Back</a>
 <button (click)="navigateByUrl()">navigateByUrl</button>
 <button (click)="navigate()">navigate</button>
 <button (click)="navigateActiveRoute()">navigateActiveRoute</button>

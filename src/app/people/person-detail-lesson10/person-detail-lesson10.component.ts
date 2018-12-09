@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PersonDetailLesson10Component implements OnInit {
 
   person: any;
-  constructor(private activatedRoute: ActivatedRoute, 
+  constructor(public activatedRoute: ActivatedRoute, 
     private router: Router) { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class PersonDetailLesson10Component implements OnInit {
   }
 
   public navigateActiveRoute() {
-    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
+    this.router.navigate(['../'], { relativeTo: this.activatedRoute, preserveQueryParams: true });
   }
 
 }
