@@ -29,9 +29,8 @@ const routes = [
     //   data: {
     //     loadAddresses: true
     //   },
-    path: 'people',
+    path: '',
     component: PersonListLesson14Component,
-  
     children: [
       {
         path: ':personId',

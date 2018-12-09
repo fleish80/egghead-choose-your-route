@@ -19,6 +19,10 @@ const routes: Route[] = [
     component: AboutComponent
   },
   {
+    path: 'people',
+    loadChildren: './people/people.module#PeopleModule'
+  },
+  {
     path: '**',
     component: NotFoundComponent
   }
