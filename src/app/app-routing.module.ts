@@ -1,3 +1,4 @@
+import { CanDeactivateGuard } from './can-deactivate';
 import { NgModule } from '@angular/core';
 import { Route, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutComponent } from './about/about.component';
@@ -19,7 +20,8 @@ const routes: Route[] = [
   {
     path: 'about',
     component: AboutComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    canDeactivate: [CanDeactivateGuard]
   },
   {
     path: 'contacts',
