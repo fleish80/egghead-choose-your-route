@@ -26,7 +26,9 @@ const routes: Route[] = [
     loadChildren: './contact/contact.module#ContactModule',
     data: {
       preload: true
-    }
+    },
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard]
     
   },
   {
