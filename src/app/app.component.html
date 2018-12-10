@@ -4,6 +4,14 @@
   </h1>
 </div>
 
+<div style="text-align: right">
+  <button *ngIf="authService.isLoggedIn(); else loginTmpl" (click)="logout()">Logout</button>
+
+  <ng-template #loginTmpl>
+    <button (click)="login()">Login</button>
+  </ng-template>
+</div>
+
 <nav>
   <a [routerLink]="['/home']" routerLinkActive="active-route">Home</a>
   <a [routerLink]="['/contacts', 'list']" routerLinkActive="active-route">Contacts</a>

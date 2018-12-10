@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CustomRoutePreloader } from './custom-route-preloader';
+import { AuthGuard } from './auth.guard';
 
 const routes: Route[] = [
   {
@@ -17,7 +18,8 @@ const routes: Route[] = [
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'contacts',
