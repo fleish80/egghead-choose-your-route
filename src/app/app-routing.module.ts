@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Route, RouterModule } from '@angular/router';
+import { Route, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CustomRoutePreloader } from './custom-route-preloader';
 
 const routes: Route[] = [
   {
@@ -19,6 +20,14 @@ const routes: Route[] = [
     component: AboutComponent
   },
   {
+    path: 'contacts',
+    loadChildren: './contact/contact.module#ContactModule',
+    data: {
+      preload: true
+    }
+    
+  },
+  {
     path: 'people',
     loadChildren: './people/people.module#PeopleModule'
   },
@@ -29,7 +38,12 @@ const routes: Route[] = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, {
+    // preloadingStrategy: PreloadAllModules
+    preloadingStrategy: CustomRoutePreloader
+
+  })],
+  exports: [RouterModule],
+  providers: [CustomRoutePreloader]
 })
 export class AppRoutingModule { }

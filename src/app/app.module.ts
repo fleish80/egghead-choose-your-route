@@ -18,7 +18,6 @@ import { ContactModule } from './contact/contact.module';
   ],
   imports: [
     BrowserModule,
-    ContactModule,
     AppRoutingModule
   ],
   providers: [],
